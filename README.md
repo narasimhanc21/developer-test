@@ -1,6 +1,7 @@
 # developer-test
 For Running Server
 - Point to <Root-Folder>/server
+- Run `npm install`
 - Run `node server.js`
 - Api Server listens on `http://localhost:3000` 
 
