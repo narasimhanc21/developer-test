@@ -1,9 +1,14 @@
-angular.module('dashboard',['SnmpService'])
+angular.module('Dashboard',['SnmpService'])
+.controller("DashboardController", DashboardController)
 .component('dashboard', {
 	templateUrl: "pages/dashboard/dashboard.html",
     controllerAs : "vm",
-	controller: ['snmp', function(snmp){
-		
+	controller: "DashboardController"
+});
+
+DashboardController.$inject = ['snmp'];
+function DashboardController(snmp) 
+{		
         var vm = this;
         
         vm.getDiskSpace = function() {
@@ -33,5 +38,6 @@ angular.module('dashboard',['SnmpService'])
             }
             );
         };
-	}]
-}); 
+};
+
+

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server",
-    "build":"gulp sass & gulp scripts & gulp angular",
+    "build": "gulp sass & gulp scripts & gulp angular",
     "watch": "gulp watch"
   },
   "keywords": [
@@ -21,6 +21,15 @@
     "gulp-sass": "^3.0.0",
     "gulp-strip-debug": "^1.1.0",
     "gulp-uglify": "^2.0.0",
-    "http-server":"^0.9.0"
+    "http-server": "^0.9.0"
+  },
+  "devDependencies": {
+    "angular": "^1.6.7",
+    "angular-mocks": "^1.6.7",
+    "angular-ui-router": "^0.4.3",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.1"
   }
 }

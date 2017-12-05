@@ -1,6 +1,6 @@
 var clientApp = angular.module('clientApp', [
 	"ngRoute",
-	"dashboard"
+	"Dashboard"
 ]); 
 
 clientApp.config(['$locationProvider' ,'$routeProvider',
