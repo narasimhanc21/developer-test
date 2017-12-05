@@ -65,12 +65,3 @@ gulp.task('angular', function() {
       .pipe(uglify())
       .pipe(gulp.dest("./dist/"));
 });
-//
-////// Watch Files For Changes
-//gulp.task('watch', function() {
-//    gulp.watch('js/*.js', ['scripts']);
-//    gulp.watch('pages/**/*.js', ['scripts']);
-//    gulp.watch('services/*.js', ['scripts']);
-//    gulp.watch('css/*.scss', ['sass']);
-//    gulp.watch('pages/**/*.scss', ['sass']);
-//});
