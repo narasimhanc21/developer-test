@@ -1,0 +1,24 @@
+<div id="dashboard" class="container">
+    <div class="row">
+        <h1>SNMP Client</h1>
+    </div>
+	<div class="row">
+        <div class="col-md-6 pull-left">
+            <button class="btn btn-primary" ng-click="vm.getDiskSpace()"> Disk</button>
+        </div>
+        <div class="col-md-6 pull-left">
+            <button class="btn btn-primary" ng-click="vm.getPacketsData()"> Packets</button>
+        </div>        
+    </div>
+    
+    <div class="row">
+        <div id="resultDiskSpace"  class="col-md-6 pull-left">
+            <div ng-if="vm.dataLoadingSp" class="loading"></div>
+            <div ng-if="!vm.dataLoadingSp">{{vm.diskData}}</div>
+        </div>
+        <div id="resultPackets" class="col-md-6 pull-right">
+            <div ng-if="vm.dataLoadingPkt" class="loading"></div>
+            <div ng-if="!vm.dataLoadingPkt">{{vm.packetsData}}</div>
+        </div>        
+    </div>
+</div>
