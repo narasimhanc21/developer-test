@@ -7,7 +7,8 @@ chai.use(chaiHttp);
 
 describe('Server Test', () => {
 
-    var url = 'http://localhost:3000';
+    var url = 'http://localhost:3000'; //server should be up and running
+
     beforeEach((done) => {
          done();
     });
