@@ -1,21 +1,14 @@
-describe("Unit Testing Dashboard Component", function() {
+describe("Unit Test: Dashboard Component", function() {
 
-  beforeEach(angular.mock.module('clientApp'));
+  beforeEach(module('clientApp'));
+  beforeEach(module('SnmpService'));
 
-  let $scope;
-  let getSnmpDataMock;
+  var ctrl, snmpService, $q;
 
-  beforeEach(inject(function(_$controller_,_$rootScope_,$q) {
-    $controller = _$controller_;
-    $scope = _$rootScope_.$new();
-
-    getSnmpDataMock = {
-      getData: function() {
-        var deferred = $q.defer();
-        deferred.resolve([{message: "Disk Space or Packet Data"}]);
-        return deferred.promise;
-      }            
-    }
+  beforeEach(inject(function($controller,_$q_, snmp) {
+    ctrl = $controller('DashboardController');
+    $q = _$q_;
+    snmpService = snmp;
   }));
 
   it('should test that tests are working', function() {
@@ -23,14 +16,19 @@ describe("Unit Testing Dashboard Component", function() {
   });
 
   it('should have a DashboardController', function() {
-    const controller = $controller('DashboardController',{$scope:$scope});
-    expect(controller).toBeDefined();
+    expect(ctrl).toBeDefined();
+  });
+    
+   describe('click Disk Button', function() {
+    beforeEach(function(){
+      var deferred = $q.defer();
+      spyOn(snmpService, 'getData').and.returnValue(deferred.promise);
+      ctrl.getDiskSpace();
+    });
+
+    it('should call snmpService', function() {     
+      expect(snmpService.getData).toHaveBeenCalled();
+    });    
   });
 
-  it('should call the snmp service and return response', inject(function() {
-    const controller = $controller('DashboardController',{$scope:$scope,snmp:getSnmpDataMock});
-    $scope.$digest();
-    //expect(controller.diskData).toBe([{message: "Disk Space or Packet Data"}]);
-  }));
-    
 });

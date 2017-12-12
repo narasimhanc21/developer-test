@@ -6,7 +6,8 @@
   "scripts": {
     "start": "http-server",
     "build": "gulp sass & gulp scripts & gulp angular",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "test": "node node_modules/karma/bin/karma start karma.conf.js"
   },
   "keywords": [
     "Angular",
